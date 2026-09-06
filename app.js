@@ -1,11 +1,7 @@
-const express = require("express");
-
+const express = require('express');
+const path = require('path');
 const app = express();
-
-app.get("/", (req, res) => {
-    res.send("Web Application Testing Pipeline");
-});
-
-app.listen(3000, () => {
-    console.log("Server Running on Port 3000");
-});
+const PORT = process.env.PORT || 3000;
+app.use(express.static(path.join(__dirname)));
+app.get('/api/health',(req,res)=>res.json({status:'ok',service:'Web Application Testing Pipeline'}));
+app.listen(PORT,()=>console.log(`Server running on http://localhost:${PORT}`));

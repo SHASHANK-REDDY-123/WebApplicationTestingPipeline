@@ -1,19 +1,15 @@
 pipeline {
-    agent any
-
-    stages {
-
-        stage('Install Dependencies') {
-            steps {
-                bat 'npm install'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                bat 'npm test'
-            }
-        }
-
+  agent any
+  stages {
+    stage('Install') {
+      steps { sh 'npm install' }
     }
+    stage('Test') {
+      steps { sh 'npm test -- --runInBand' }
+    }
+  }
+  post {
+    success { echo 'Quality gate PASSED - build successful' }
+    failure { echo 'Tests failed - build unsuccessful' }
+  }
 }

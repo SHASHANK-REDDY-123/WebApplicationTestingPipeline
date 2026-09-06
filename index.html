@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Application Testing Pipeline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">⚡</span><div><b>TestFlow</b><small>Web Application Testing Pipeline</small></div></div>
+  <nav><a href="#home">Home</a><a href="#pipeline">Pipeline</a><a href="#tests">Tests</a><a href="#about">About</a></nav>
+  <button class="run" id="runTop">▶ Run Pipeline</button>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="heroText">
+    <span class="badge">● CI/CD AUTOMATION</span>
+    <h1>Web Application<br><span>Testing Pipeline</span></h1>
+    <p>Automatically validate every code change with GitHub, Jenkins and automated tests.</p>
+    <div class="actions"><button class="primary" id="runHero">▶ Run Test Pipeline</button><a class="secondary" href="#pipeline">View Pipeline ↓</a></div>
+  </div>
+  <div class="terminal">
+    <div class="termHead"><span>pipeline-status.sh</span><span>● LIVE</span></div>
+    <pre id="terminalText">$ ./run-pipeline
+> Checking source code...
+✓ GitHub repository connected
+> Installing dependencies...
+✓ npm install completed
+> Running Jest test suite...
+✓ 5 tests passed
+> Quality gate: PASSED
+> Jenkins build #42: SUCCESS
+
+<span class="cursor">▋</span></pre>
+  </div>
+</section>
+
+<section class="stats">
+  <div><b>100%</b><span>Automated Tests</span></div><div><b>5</b><span>Test Cases</span></div><div><b>0</b><span>Failed Tests</span></div><div><b>42</b><span>Build Number</span></div>
+</section>
+
+<section id="pipeline" class="section">
+  <div class="sectionTitle"><span>01</span><div><h2>CI Testing Pipeline</h2><p>From code commit to verified build.</p></div></div>
+  <div class="pipeline">
+    <div class="stage done"><i>⌘</i><b>Code Commit</b><small>Developer pushes changes</small><em>✓ Complete</em></div>
+    <div class="arrow">→</div>
+    <div class="stage done"><i>◉</i><b>GitHub</b><small>Source repository</small><em>✓ Complete</em></div>
+    <div class="arrow">→</div>
+    <div class="stage done"><i>⚙</i><b>Jenkins</b><small>CI server starts build</small><em>✓ Complete</em></div>
+    <div class="arrow">→</div>
+    <div class="stage done"><i>🧪</i><b>Jest Tests</b><small>Automated test suite</small><em>✓ Complete</em></div>
+    <div class="arrow">→</div>
+    <div class="stage success"><i>✓</i><b>Quality Gate</b><small>Build verified</small><em>✓ PASSED</em></div>
+  </div>
+</section>
+
+<section id="tests" class="section">
+  <div class="sectionTitle"><span>02</span><div><h2>Test Results</h2><p>Latest automated test execution.</p></div></div>
+  <div class="testGrid">
+    <div class="testCard"><span class="check">✓</span><div><b>Homepage loads</b><small>UI smoke test</small></div><strong>PASSED</strong></div>
+    <div class="testCard"><span class="check">✓</span><div><b>API response</b><small>Endpoint validation</small></div><strong>PASSED</strong></div>
+    <div class="testCard"><span class="check">✓</span><div><b>Login validation</b><small>Form test</small></div><strong>PASSED</strong></div>
+    <div class="testCard"><span class="check">✓</span><div><b>Pipeline status</b><small>Integration test</small></div><strong>PASSED</strong></div>
+    <div class="testCard"><span class="check">✓</span><div><b>Health check</b><small>Application test</small></div><strong>PASSED</strong></div>
+  </div>
+  <div class="resultBar"><div><b>Test Suite</b><span>5 / 5 passed</span></div><div class="progress"><span id="progress"></span></div></div>
+</section>
+
+<section id="about" class="about">
+  <div><span class="badge">PROJECT OVERVIEW</span><h2>Built for Continuous Quality</h2><p>This project demonstrates Continuous Integration by executing automated tests after code changes. Jenkins orchestrates the workflow while Jest verifies application behaviour.</p></div>
+  <div class="tech"><div>HTML / CSS</div><div>JavaScript</div><div>Node.js</div><div>Jest</div><div>GitHub</div><div>Jenkins</div></div>
+</section>
+</main>
+
+<footer><b>TestFlow</b> · Web Application Testing Pipeline <span>CI Concepts · Jenkinsfile Usage · Quality Assurance</span></footer>
+<script src="script.js"></script>
+</body>
+</html>
